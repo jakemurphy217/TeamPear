@@ -84,26 +84,66 @@
               <script>
                   
                 
-            var url1 = "https://www.food2fork.com/api/search?key=99daf941fe57229da1083983707f7101&q=";
-            //var search = "beef";
-            var url2 = "&page=2";
-            var input;
             
-            var button = select("#SearchBtn");
-            button.mousePressed(foodss);
+        
+            var input = document.getElementById("foodie");
+            var searchBtn = document.getElementById("SearchBtn");
+            var value;
                   
-            input = select("#foodie")
+          SearchBtn.addEventListener("click", () => {
+
+              value = input.value;
+
+              var url = "https://www.food2fork.com/api/search?key=99daf941fe57229da1083983707f7101&q=" + value +  "&page=2";
+
+
+               $.getJSON(url, function(data) 
+                
+                var recipies = data.recipies;
+                         var html= "<div>" 
+                         
+                         html+= "</div>"
+                var html = "<p>" + recipie.title + "</p>;
+            
+            
+                 console.log(data)
+               })
+
+
+          });
+        
                   
-              $(document).ready(function(){
-                  $("#SearchBtn").click(function(){
-                      $.getJSON(url1 + input.value() + url2, function(food){
-                      console.log(food);
-                      
-                  })
                   
-              })
                   
-              })
+                  
+                  
+            
+                  
+                  
+                  
+                  
+                 
+            
+            // var button = select("#SearchBtn");
+            // button.mousePressed(foodss);
+                  
+            // input = select("#foodie")
+                  
+              // $(document).ready(function(){
+                 //  $("#SearchBtn").click(function(){
+                    //   $.getJSON(url1 + input.value() + url2, function(food){
+                    //   console.log(food);
+                //      
+                //  })
+                  //
+              // })
+            //      
+            //  })
+                  
+                  
+                   
+                  
+                  
                 
               </script>
 

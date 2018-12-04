@@ -96,14 +96,14 @@
                 <div class="output"></div>
 
                 <!-- Handlebars template  -->
-                <script id="comments-template" type="text/x-handlebars-template">
-                    <ul>
-                        {{#each comments}}
-                    <li>{{image_url.body}}</li>
-                    <li>{{publisher.body}}</li>
-                    <li>{{f2f_url.body}}</li>
-                    <li>{{title.body}}</li>
-                    <li>{{source_url.body}}</li>
+                <script id="recipes-template" type="text/x-handlebars-template">
+                    <ul class="recipe-list">
+                        {{#each recipes}}
+                            <li class="recipe">
+                            <h2>{{this.title}}</h2>
+                            <img src="{{this.image_url}}" />
+                            </li>
+                            
                         {{/each}}
                   </ul>
                 </script>

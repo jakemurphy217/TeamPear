@@ -26,16 +26,20 @@ function onSubmit(event) {
     axios.get('https://www.food2fork.com/api/search?key=99daf941fe57229da1083983707f7101&q=' + postId + '&page=2')
         .then(function (response) {
             // Store the response from the api
-            var data = response.data
+        console.log(response)
+            var recipes = response.data.recipes
             // generate the html template
             var templateContext = {
-                comments: data
+                recipes: recipes
             }
-            var html = getTemplateHTML('comments-template', templateContext)
+            
+            
+            
+            var html = getTemplateHTML('recipes-template', templateContext)
 
             // write html to the page
             outputElement.innerHTML = html
-            console.log(data);
+            console.log(recipes)
 
         })
         .catch(function (err) {

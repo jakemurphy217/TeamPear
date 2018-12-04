@@ -13,8 +13,24 @@
     
     
 }
+
+.recipe-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+recipe-item{
+    
+}
 body{
     margin: 30px
+}
+
+img {
+    max-width: 100%;
 }
 .my-row{
     border: 3px solid red;
